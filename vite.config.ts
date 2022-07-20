@@ -8,7 +8,9 @@ import sveltePreprocess from "svelte-preprocess";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      reactivityTransform: true,
+    }),
     svelte({
       preprocess: sveltePreprocess(),
     }),
@@ -18,4 +20,5 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  base: "/svelte-in-vue3-ts/",
 });
