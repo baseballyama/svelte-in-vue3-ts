@@ -17,7 +17,7 @@ const onChangeCount = (newCount: number) => (count.value = newCount);
     <p>count: {{ count }}</p>
     <input v-model="count" type="number" />
     <button @click="onClick">Click Me</button>
-    <button @click="reset">Reset Counter</button>
+    <button @click="reset">Reset Counter (reset value in vue)</button>
     <p>{{ context }}</p>
     <input v-model="context" />
     <SvelteWrapperComponent :count="count" :onChangeCount="onChangeCount" />

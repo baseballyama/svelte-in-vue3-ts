@@ -52,7 +52,7 @@ watch(svelteWrapper, () => {
 </script>
 
 <template>
-  <button @click="reset">Reset Counter</button>
+  <button @click="reset">Reset Counter (call Svelte function)</button>
   <section ref="svelteWrapper"></section>
 </template>
 
