@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from "vue";
-import { ref, onMounted, onUnmounted, watch, watchEffect, inject } from "vue";
+import { ref, onMounted, onUnmounted, watch, inject } from "vue";
 import SvelteComponent from "./SvelteComponent.svelte";
 import type { WrapperProps, $on } from "./SvelteComponent.svelte";
 import type { Writable } from "svelte/store";
@@ -16,6 +16,10 @@ const props: WrapperProps = defineProps<{
 }>();
 const context: Ref<unknown> = inject(key) ?? ref();
 const storeRef = ref<Writable<unknown>>(writable(context?.value));
+
+const reset = () => {
+  component.reset();
+};
 
 onMounted(() => {
   const target = svelteWrapper.value;
@@ -48,6 +52,7 @@ watch(svelteWrapper, () => {
 </script>
 
 <template>
+  <button @click="reset">Reset Counter</button>
   <section ref="svelteWrapper"></section>
 </template>
 

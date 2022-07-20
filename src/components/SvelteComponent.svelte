@@ -4,7 +4,7 @@
   import { key } from "../context";
 
   export let count: Props["count"] = 1;
-  export const reset = () => {
+  export const reset: Handlers["reset"] = () => {
     count = 0;
   };
 
