@@ -1,6 +1,7 @@
 import {
   GetDispatcherPublisherType,
   GetDispatcherSubscriberType,
+  GetSvelteWrapperProps,
 } from "../svelte-type-helper";
 
 declare module "./SvelteComponent.svelte" {
